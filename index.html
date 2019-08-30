@@ -2,30 +2,51 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>React Hello World</title>
+  <meta charset="UTF-8">
+  <title>React Hello World</title>
 </head>
 
 <body>
-    <div id="application-root"></div>
+  <div id="application-root"></div>
 
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-    <script type="text/babel">
-        function App(props) {
-  console.log(props)
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script type="text/babel">
+  function App(props) {
+
   return (
+    <div>
     <header>
       {props.children}
     </header>
+    <main>
+      <section className='education'>
+        <p>Attended Brown University</p>
+      </section>
+      <section className='employment'>
+        <ul>
+          <li>Target, Associate, 2019-2019, lopus plurem etc etc</li>
+          <li>Walmart, Associate, 2018-2019, lopus plurem etc etc</li>
+        </ul>
+      </section>
+    </main>
+    <address>
+      <ul>
+        <li>{props.children}</li>
+        <li>Email: sally@student.org</li>
+        <li>Phone Number: 123-456-7890</li>
+        <li><img src='./images/sally.jpg/'></img></li>
+      </ul>
+    </address>
+    </div>
   );
-}
+};
 
 // Nested elements inside the App
 ReactDOM.render(
-  <App className='my-class'>
-    <h1>Current Page Title!</h1>
+  <App>
+    Sally
   </App>,
   document.querySelector('#application-root')
 );
